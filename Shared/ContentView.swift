@@ -10,45 +10,78 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+            VStack {
+                NavigationLink(destination: PreliminarySurvey()) {
+                    Button(action: {}) {
+                        Text("Begin Free Preliminary Survey")
+                            .padding()
+                            .foregroundColor(Color.white)
                     }
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(width: 400, height: 80)
+                    .background(Color.green)
+                    .cornerRadius(8)
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                
+                NavigationLink(destination: DetailedSurvey()) {
+                    Button(action: {}) {
+                        Text("Begin Free Detailed Survey")
+                            .padding()
+                            .foregroundColor(Color.white)
                     }
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(width: 400, height: 80)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+                }
+                
+                VStack {
+                    Text("User account required for detailed survey. Already have an account?")
+                        .padding()
+                        .foregroundColor(Color.gray)
+                    Link("Log In", destination: URL(string: "https://www.apple.com")!)
+                    //Button("Log In") {}
+                }
+                
+                Spacer()
+                
+                Text("Dev SQL Tests")
+                    .font(.largeTitle)
+                    .padding()
+                NavigationLink(destination: CustomersSQLExample()) {
+                    Text("Customers")
+                }
+                
+                Spacer()
+                
+                HStack {
+                    Text("Need help? Try visiting our")
+                        .foregroundColor(Color.gray)
+                    Link("FAQ", destination: URL(string: "https://www.apple.com")!)
+                    //Button("FAQ") {}
+                    Text("or")
+                        .foregroundColor(Color.gray)
+                    Link("Contact Us", destination: URL(string: "https://www.apple.com")!)
+                    //Button("Contact Us") {}
                 }
             }
-            Text("Select an item")
         }
+        .navigationBarTitle(Text("Move Management System"))
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -59,11 +92,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {

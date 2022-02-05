@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0A3052227AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */; };
+		E0A3052327AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */; };
 		E0B5FD1627AC368B00A415A8 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD1527AC368B00A415A8 /* Tests_iOS.swift */; };
 		E0B5FD1827AC368B00A415A8 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD1727AC368B00A415A8 /* Tests_iOSLaunchTests.swift */; };
 		E0B5FD2227AC368B00A415A8 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD2127AC368B00A415A8 /* Tests_macOS.swift */; };
@@ -21,6 +23,10 @@
 		E0B5FD2C27AC368B00A415A8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FCFE27AC368800A415A8 /* Persistence.swift */; };
 		E0B5FD2D27AC368B00A415A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B5FCFF27AC368B00A415A8 /* Assets.xcassets */; };
 		E0B5FD2E27AC368B00A415A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B5FCFF27AC368B00A415A8 /* Assets.xcassets */; };
+		E0B5FD3E27AC67C100A415A8 /* PreliminarySurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD3D27AC67C100A415A8 /* PreliminarySurvey.swift */; };
+		E0B5FD3F27AC67C100A415A8 /* PreliminarySurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD3D27AC67C100A415A8 /* PreliminarySurvey.swift */; };
+		E0B5FD4127AC689A00A415A8 /* DetailedSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD4027AC689A00A415A8 /* DetailedSurvey.swift */; };
+		E0B5FD4227AC689A00A415A8 /* DetailedSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD4027AC689A00A415A8 /* DetailedSurvey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersSQLExample.swift; sourceTree = "<group>"; };
+		E0A3052427AF12100008A70E /* MMS--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MMS--iOS--Info.plist"; sourceTree = "<group>"; };
 		E0B5FCFB27AC368800A415A8 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E0B5FCFC27AC368800A415A8 /* MMSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMSApp.swift; sourceTree = "<group>"; };
 		E0B5FCFD27AC368800A415A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +63,8 @@
 		E0B5FD1D27AC368B00A415A8 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B5FD2127AC368B00A415A8 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		E0B5FD2327AC368B00A415A8 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		E0B5FD3D27AC67C100A415A8 /* PreliminarySurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreliminarySurvey.swift; sourceTree = "<group>"; };
+		E0B5FD4027AC689A00A415A8 /* DetailedSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSurvey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +102,7 @@
 		E0B5FCF427AC368800A415A8 = {
 			isa = PBXGroup;
 			children = (
+				E0A3052427AF12100008A70E /* MMS--iOS--Info.plist */,
 				E0B5FCF927AC368800A415A8 /* Shared */,
 				E0B5FD0B27AC368B00A415A8 /* macOS */,
 				E0B5FD1427AC368B00A415A8 /* Tests iOS */,
@@ -105,6 +116,9 @@
 			children = (
 				E0B5FCFC27AC368800A415A8 /* MMSApp.swift */,
 				E0B5FCFD27AC368800A415A8 /* ContentView.swift */,
+				E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */,
+				E0B5FD4027AC689A00A415A8 /* DetailedSurvey.swift */,
+				E0B5FD3D27AC67C100A415A8 /* PreliminarySurvey.swift */,
 				E0B5FCFE27AC368800A415A8 /* Persistence.swift */,
 				E0B5FCFF27AC368B00A415A8 /* Assets.xcassets */,
 				E0B5FCFA27AC368800A415A8 /* MMS.xcdatamodeld */,
@@ -307,10 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B5FD3E27AC67C100A415A8 /* PreliminarySurvey.swift in Sources */,
 				E0B5FD2527AC368B00A415A8 /* MMS.xcdatamodeld in Sources */,
 				E0B5FD2B27AC368B00A415A8 /* Persistence.swift in Sources */,
 				E0B5FD2727AC368B00A415A8 /* MMSApp.swift in Sources */,
 				E0B5FD2927AC368B00A415A8 /* ContentView.swift in Sources */,
+				E0B5FD4127AC689A00A415A8 /* DetailedSurvey.swift in Sources */,
+				E0A3052227AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,10 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B5FD3F27AC67C100A415A8 /* PreliminarySurvey.swift in Sources */,
 				E0B5FD2627AC368B00A415A8 /* MMS.xcdatamodeld in Sources */,
 				E0B5FD2C27AC368B00A415A8 /* Persistence.swift in Sources */,
 				E0B5FD2827AC368B00A415A8 /* MMSApp.swift in Sources */,
 				E0B5FD2A27AC368B00A415A8 /* ContentView.swift in Sources */,
+				E0B5FD4227AC689A00A415A8 /* DetailedSurvey.swift in Sources */,
+				E0A3052327AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +500,7 @@
 				DEVELOPMENT_TEAM = F5HST6KHNJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MMS--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -510,6 +531,7 @@
 				DEVELOPMENT_TEAM = F5HST6KHNJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MMS--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
