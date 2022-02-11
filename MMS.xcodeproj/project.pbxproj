@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E009C1ED27B6F06B0075307C /* LoginRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009C1EC27B6F06B0075307C /* LoginRegister.swift */; };
+		E009C1EE27B6F06B0075307C /* LoginRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009C1EC27B6F06B0075307C /* LoginRegister.swift */; };
 		E0A3052227AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */; };
 		E0A3052327AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */; };
 		E0B5FD1627AC368B00A415A8 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5FD1527AC368B00A415A8 /* Tests_iOS.swift */; };
@@ -47,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E009C1EC27B6F06B0075307C /* LoginRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegister.swift; sourceTree = "<group>"; };
 		E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersSQLExample.swift; sourceTree = "<group>"; };
 		E0A3052427AF12100008A70E /* MMS--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MMS--iOS--Info.plist"; sourceTree = "<group>"; };
 		E0B5FCFB27AC368800A415A8 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 			children = (
 				E0B5FCFC27AC368800A415A8 /* MMSApp.swift */,
 				E0B5FCFD27AC368800A415A8 /* ContentView.swift */,
+				E009C1EC27B6F06B0075307C /* LoginRegister.swift */,
 				E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */,
 				E0B5FD4027AC689A00A415A8 /* DetailedSurvey.swift */,
 				E0B5FD3D27AC67C100A415A8 /* PreliminarySurvey.swift */,
@@ -325,6 +329,7 @@
 				E0B5FD2527AC368B00A415A8 /* MMS.xcdatamodeld in Sources */,
 				E0B5FD2B27AC368B00A415A8 /* Persistence.swift in Sources */,
 				E0B5FD2727AC368B00A415A8 /* MMSApp.swift in Sources */,
+				E009C1ED27B6F06B0075307C /* LoginRegister.swift in Sources */,
 				E0B5FD2927AC368B00A415A8 /* ContentView.swift in Sources */,
 				E0B5FD4127AC689A00A415A8 /* DetailedSurvey.swift in Sources */,
 				E0A3052227AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */,
@@ -339,6 +344,7 @@
 				E0B5FD2627AC368B00A415A8 /* MMS.xcdatamodeld in Sources */,
 				E0B5FD2C27AC368B00A415A8 /* Persistence.swift in Sources */,
 				E0B5FD2827AC368B00A415A8 /* MMSApp.swift in Sources */,
+				E009C1EE27B6F06B0075307C /* LoginRegister.swift in Sources */,
 				E0B5FD2A27AC368B00A415A8 /* ContentView.swift in Sources */,
 				E0B5FD4227AC689A00A415A8 /* DetailedSurvey.swift in Sources */,
 				E0A3052327AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */,

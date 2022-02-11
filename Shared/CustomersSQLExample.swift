@@ -9,13 +9,10 @@ import SwiftUI
 import Combine
 
 struct Customer: Decodable, Identifiable {
-    
-    var customerID: Int!
-    var phone: Int64!
+    var id: Int
+    var phone: String!
     var email: String!
     var password: String!
-    
-    var id: Int
 }
 
 class CustomerService: ObservableObject {
@@ -24,7 +21,7 @@ class CustomerService: ObservableObject {
     private var cancellableSet: Set<AnyCancellable> = []
     
     func downloadCustomers() {
-        let urlstring = "http://frankcmps490sp22.cmix.louisiana.edu/Customers.php"
+        let urlstring = "http://frankcmps490sp22.cmix.louisiana.edu/Customers2.php"
         let url = URL(string: urlstring)!
         
         URLSession.shared
@@ -52,24 +49,21 @@ struct CustomersSQLExample: View {
     //@State var month: String = ""
     
     var body: some View {
-        NavigationView {
-            VStack {
-                //TextField("Month:", text: $month)
-                Button { customerService.downloadCustomers() } label: {
-                    Text("Get Customers!")
-                }
-                Text(customerService.errorMessage)
-                //.font(.largeTitle)
-                    .foregroundColor(Color.gray)
+        VStack {
+            //TextField("Month:", text: $month)
+            Button { customerService.downloadCustomers() } label: {
+                Text("Get Customers!")
             }
-            
-            List {
-                ForEach(customerService.customers) {cust in
-                    Text("**\(cust.customerID)** \(cust.phone) \(cust.email) \(cust.password)")
-                }
+            Text(customerService.errorMessage)
+            //.font(.largeTitle)
+                .foregroundColor(Color.gray)
+        }
+        
+        List {
+            ForEach(customerService.customers) {cust in
+                Text("**\(cust.id)** \(cust.phone) \(cust.email) \(cust.password)")
             }
         }
-        .navigationBarTitle(Text("Customers"))
     }
 }
 

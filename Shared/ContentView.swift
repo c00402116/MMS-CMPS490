@@ -47,8 +47,9 @@ struct ContentView: View {
                     Text("User account required for detailed survey. Already have an account?")
                         .padding()
                         .foregroundColor(Color.gray)
-                    Link("Log In", destination: URL(string: "https://www.apple.com")!)
-                    //Button("Log In") {}
+                    NavigationLink(destination: LoginRegister()) {
+                        Text("Log In")
+                    }
                 }
                 
                 Spacer()
