@@ -42,6 +42,28 @@ class CustomerService: ObservableObject {
                 self.customers = $0
             }.store(in: &cancellableSet)
     }
+    
+    func checkLogin(_ email: String) {
+        let urlstring = "http://frankcmps490sp22.cmix.louisiana.edu/login.php?email=\(email)"
+        let url = URL(string: urlstring)!
+        
+        URLSession.shared
+            .dataTaskPublisher(for: URLRequest(url: url))
+            .map(\.data)
+            .decode(type: [Customer].self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                }
+            } receiveValue: {
+                self.customers.removeAll()
+                self.customers = $0
+            }.store(in: &cancellableSet)
+    }
 }
 
 struct CustomersSQLExample: View {
