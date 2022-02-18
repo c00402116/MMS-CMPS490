@@ -23,6 +23,7 @@ struct LoginRegister: View {
     @State var options: [String] = ["Log In", "Register"]
     @State var headers: [String] = ["Log in to an existing account.", "Register for a new account."]
     
+    //valid = 2 is fail, valid == 1 is success
     @State public var valid: Int = 0
     
     var body: some View {
@@ -89,6 +90,7 @@ struct LoginRegister: View {
             Button { checkLogin() } label: {
                 Text("Log In")
                     .padding()
+                    .foregroundColor(Color.white)
             }
             .background(Color.blue)
             .buttonStyle(PlainButtonStyle())
@@ -99,19 +101,23 @@ struct LoginRegister: View {
     
     private func checkLogin() {
         
-        customerService.checkLogin(email[0])
+        let passwordReturn = customerService.checkLogin(email[0])
+        
+        //customerService.checkLogin(email[0])
         
         debugPrint(customerService.errorMessage)
+        //debugPrint(customerService.customers[0].email!)
+        //debugPrint(customerService.customers[0].password!)
         
-        if (customerService.customers.count > 0) {
-            for pwd in customerService.customers {
-                if (password[0] == pwd.password) {
+        //if (customerService.customers.count > 0) {
+            //for pwd in customerService.customers {
+            if (password[0] == passwordReturn) {
                     valid = 1
                 } else {
                     valid = 2
                 }
-            }
-        } else {valid = 2}
+            //}
+        //} else {valid = 2}
     }
 }
 
