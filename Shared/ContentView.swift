@@ -60,6 +60,9 @@ struct ContentView: View {
                 NavigationLink(destination: CustomersSQLExample()) {
                     Text("Customers")
                 }
+                NavigationLink(destination: PostCustomersSQLExample()) {
+                    Text("Insert a customer here")
+                }
                 
                 Spacer()
                 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AFF103827BC444000A55C14 /* PostCustomersSQLExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF103727BC444000A55C14 /* PostCustomersSQLExample.swift */; };
+		9AFF103927BC444000A55C14 /* PostCustomersSQLExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF103727BC444000A55C14 /* PostCustomersSQLExample.swift */; };
 		E009C1ED27B6F06B0075307C /* LoginRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009C1EC27B6F06B0075307C /* LoginRegister.swift */; };
 		E009C1EE27B6F06B0075307C /* LoginRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009C1EC27B6F06B0075307C /* LoginRegister.swift */; };
 		E0A3052227AF0B6A0008A70E /* CustomersSQLExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */; };
@@ -49,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9AFF103727BC444000A55C14 /* PostCustomersSQLExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCustomersSQLExample.swift; sourceTree = "<group>"; };
 		E009C1EC27B6F06B0075307C /* LoginRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegister.swift; sourceTree = "<group>"; };
 		E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersSQLExample.swift; sourceTree = "<group>"; };
 		E0A3052427AF12100008A70E /* MMS--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MMS--iOS--Info.plist"; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 			children = (
 				E0B5FCFC27AC368800A415A8 /* MMSApp.swift */,
 				E0B5FCFD27AC368800A415A8 /* ContentView.swift */,
+				9AFF103727BC444000A55C14 /* PostCustomersSQLExample.swift */,
 				E009C1EC27B6F06B0075307C /* LoginRegister.swift */,
 				E0A3052127AF0B6A0008A70E /* CustomersSQLExample.swift */,
 				E0B5FD4027AC689A00A415A8 /* DetailedSurvey.swift */,
@@ -325,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFF103827BC444000A55C14 /* PostCustomersSQLExample.swift in Sources */,
 				E0B5FD3E27AC67C100A415A8 /* PreliminarySurvey.swift in Sources */,
 				E0B5FD2527AC368B00A415A8 /* MMS.xcdatamodeld in Sources */,
 				E0B5FD2B27AC368B00A415A8 /* Persistence.swift in Sources */,
@@ -340,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFF103927BC444000A55C14 /* PostCustomersSQLExample.swift in Sources */,
 				E0B5FD3F27AC67C100A415A8 /* PreliminarySurvey.swift in Sources */,
 				E0B5FD2627AC368B00A415A8 /* MMS.xcdatamodeld in Sources */,
 				E0B5FD2C27AC368B00A415A8 /* Persistence.swift in Sources */,
