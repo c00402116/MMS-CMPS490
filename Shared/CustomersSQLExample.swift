@@ -43,10 +43,10 @@ class CustomerService: ObservableObject {
             }.store(in: &cancellableSet)
     }
     
-    func checkLogin(_ email: String) -> String {
+    func checkLogin(_ email: String) {
         let urlstring = "http://frankcmps490sp22.cmix.louisiana.edu/login.php?email=\(email)"
         let url = URL(string: urlstring)!
-        var returnVal: String = ""
+        //var returnVal: String = ""
         
         URLSession.shared
             .dataTaskPublisher(for: URLRequest(url: url))
@@ -63,9 +63,9 @@ class CustomerService: ObservableObject {
             } receiveValue: {
                 self.customers.removeAll()
                 self.customers = $0
-                returnVal = self.customers[0].password ?? ""
+                //returnVal = self.customers[0].password ?? ""
             }.store(in: &cancellableSet)
-        return returnVal
+        //return returnVal
     }
 }
 

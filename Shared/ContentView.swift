@@ -9,6 +9,11 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @AppStorage("email") var emailLoggedIn: String = ""
+    @AppStorage("password") var passwordLoggedIn: String = ""
+    @AppStorage("loggedIn") var loggedIn: Bool = false
+    
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
@@ -17,6 +22,7 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     var body: some View {
+        
         NavigationView {
             VStack {
                 NavigationLink(destination: PreliminarySurvey()) {
@@ -43,12 +49,14 @@ struct ContentView: View {
                     .cornerRadius(8)
                 }
                 
-                VStack {
-                    Text("User account required for detailed survey. Already have an account?")
-                        .padding()
-                        .foregroundColor(Color.gray)
-                    NavigationLink(destination: LoginRegister()) {
-                        Text("Log In")
+                if (!loggedIn) {
+                    VStack {
+                        Text("User account required for detailed survey. Already have an account?")
+                            .padding()
+                            .foregroundColor(Color.gray)
+                        NavigationLink(destination: LoginRegister()) {
+                            Text("Log In")
+                        }
                     }
                 }
                 

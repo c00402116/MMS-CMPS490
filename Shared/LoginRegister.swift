@@ -10,6 +10,10 @@ import Combine
 
 struct LoginRegister: View {
     
+    @AppStorage("email") var emailLoggedIn: String = ""
+    @AppStorage("password") var passwordLoggedIn: String = ""
+    @AppStorage("loggedIn") var loggedIn: Bool = false
+    
     @ObservedObject var customerService = CustomerService()
     
     //This is an integer for tracking the Picker at the top of the View. When = 0 for login, the user is using email[0] and password[0] which is used in a GET query to compare existing database entries. When = 1 for register, the user is in email[1] and password[1] which is used for a POST query to add a new entry.
@@ -75,17 +79,15 @@ struct LoginRegister: View {
             Spacer()
             Text("\(headers[loginOrRegister])")
                 .padding()
-            if (valid == 0) {
-                Text("")
-            } else if (valid == 1) {
-                Text("Log in successful!")
-                    .padding()
-                    .foregroundColor(Color.green)
-            } else {
-                Text("Log in failed.")
-                    .padding()
-                    .foregroundColor(Color.red)
-            }
+            //if (valid == 0) {
+            //    Text("")
+            //} else if (valid == 1) {
+            //
+            //} else {
+            //    Text("Log in failed.")
+            //        .padding()
+            //        .foregroundColor(Color.red)
+            //}
             Spacer()
             Button { checkLogin() } label: {
                 Text("Log In")
@@ -95,29 +97,39 @@ struct LoginRegister: View {
             .background(Color.blue)
             .buttonStyle(PlainButtonStyle())
             .cornerRadius(8)
+            //.frame(width: 300) this doesn't seem to do anything thanks swiftUI.
             .padding()
         }
     }
-    
+    //timing issue. App reacts faster than the response from SQL.
     private func checkLogin() {
         
-        let passwordReturn = customerService.checkLogin(email[0])
+        //let passwordReturn = customerService.checkLogin(email[0])
         
-        //customerService.checkLogin(email[0])
+        customerService.checkLogin(email[0])
         
-        debugPrint(customerService.errorMessage)
-        //debugPrint(customerService.customers[0].email!)
-        //debugPrint(customerService.customers[0].password!)
-        
-        //if (customerService.customers.count > 0) {
-            //for pwd in customerService.customers {
-            if (password[0] == passwordReturn) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            
+            debugPrint(customerService.errorMessage)
+            //debugPrint(customerService.customers[0].email!)
+            //debugPrint(customerService.customers[0].password!)
+            
+            if (customerService.customers.count > 0) {
+                //for pwd in customerService.customers {
+                if (password[0] == customerService.customers[0].password) {
                     valid = 1
                 } else {
                     valid = 2
                 }
-            //}
-        //} else {valid = 2}
+                //}
+            } else { valid = 2 }
+            if (valid == 1) {
+                emailLoggedIn = email[0]
+                passwordLoggedIn = customerService.customers[0].password
+                loggedIn = true
+                ContentView(emailLoggedIn: emailLoggedIn, passwordLoggedIn: passwordLoggedIn, loggedIn: loggedIn)
+            }
+        }
     }
 }
 
