@@ -127,7 +127,7 @@ struct LoginRegister: View {
                 emailLoggedIn = email[0]
                 passwordLoggedIn = customerService.customers[0].password
                 loggedIn = true
-                ContentView(emailLoggedIn: emailLoggedIn, passwordLoggedIn: passwordLoggedIn, loggedIn: loggedIn)
+                NavigationLink("contentView", destination: ContentView(emailLoggedIn: emailLoggedIn, passwordLoggedIn: passwordLoggedIn, loggedIn: loggedIn))
             }
         }
     }

@@ -58,6 +58,10 @@ struct ContentView: View {
                             Text("Log In")
                         }
                     }
+                } else if (loggedIn) {
+                    Spacer()
+                    Text("Welcome <username associated with \(emailLoggedIn)>")
+                        .padding()
                 }
                 
                 Spacer()
