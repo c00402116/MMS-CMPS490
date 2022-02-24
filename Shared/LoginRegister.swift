@@ -15,9 +15,11 @@ struct LoginRegister: View {
     @AppStorage("loggedIn") var loggedIn: Bool = false
     
     @ObservedObject var customerService = CustomerService()
+    @ObservedObject var insertThisCustomer = InsertCustomerService()
     
     //This is an integer for tracking the Picker at the top of the View. When = 0 for login, the user is using email[0] and password[0] which is used in a GET query to compare existing database entries. When = 1 for register, the user is in email[1] and password[1] which is used for a POST query to add a new entry.
     @State var loginOrRegister: Int = 0
+    @State var registerSuccess: Bool = false
     
     @State var email: [String] = ["", ""]
     @State var password: [String] = ["", ""]
@@ -45,7 +47,7 @@ struct LoginRegister: View {
                     Text("Name")
                         .padding()
                         .frame(width:140, alignment: .leading)
-                    TextField("name", text: $password[loginOrRegister])
+                    TextField("name", text: $name[loginOrRegister])
                         .padding()
                 }
             }
@@ -72,7 +74,7 @@ struct LoginRegister: View {
                     Text("Phone")
                         .padding()
                         .frame(width:140, alignment: .leading)
-                    TextField("password", text: $password[loginOrRegister])
+                    TextField("Phone", text: $phone[loginOrRegister])
                         .padding()
                 }
             }
@@ -89,16 +91,33 @@ struct LoginRegister: View {
             //        .foregroundColor(Color.red)
             //}
             Spacer()
-            Button { checkLogin() } label: {
-                Text("Log In")
-                    .padding()
-                    .foregroundColor(Color.white)
+            if(loginOrRegister==0) {
+                Button { checkLogin() } label: {
+                    Text("Log In")
+                        .padding()
+                        .foregroundColor(Color.white)
+                }
+                .background(Color.blue)
+                .buttonStyle(PlainButtonStyle())
+                .cornerRadius(8)
+                //.frame(width: 300) this doesn't seem to do anything thanks swiftUI.
+                .padding()
+            } else if(loginOrRegister==1) {
+                Button { registerCustomer(email[1],password[1],phone[1]) } label: {
+                    Text("Register")
+                        .padding()
+                        .foregroundColor(Color.white)
+                }
+                .background(Color.blue)
+                .buttonStyle(PlainButtonStyle())
+                .cornerRadius(8)
+                //.frame(width: 300) this doesn't seem to do anything thanks swiftUI.
+                .padding()
+                if(registerSuccess) {
+                    Text("Account registered")
+                        .foregroundColor(Color.green)
+                }
             }
-            .background(Color.blue)
-            .buttonStyle(PlainButtonStyle())
-            .cornerRadius(8)
-            //.frame(width: 300) this doesn't seem to do anything thanks swiftUI.
-            .padding()
         }
     }
     //timing issue. App reacts faster than the response from SQL.
@@ -130,6 +149,11 @@ struct LoginRegister: View {
                 NavigationLink("contentView", destination: ContentView(emailLoggedIn: emailLoggedIn, passwordLoggedIn: passwordLoggedIn, loggedIn: loggedIn))
             }
         }
+    }
+    
+    private func registerCustomer(_ email: String, _ password: String, _ phone: String) {
+        insertThisCustomer.getCustomers(phone,email,password)
+        registerSuccess = true
     }
 }
 

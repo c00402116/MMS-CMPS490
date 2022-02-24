@@ -19,7 +19,7 @@ class InsertCustomerService: ObservableObject {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "Post"
-        let postString = "phone=\(phone) & email=\(email) & password = \(password)"
+        let postString = "phone=\(phone) & password = \(password) & email=\(email)"
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         
         URLSession.shared
@@ -60,7 +60,7 @@ struct PostCustomersSQLExample: View {
         }
         
         List {
-            Text("Input: \(phone)")
+            Text("Input: \(phone), \(email), \(password)")
             ForEach(customerService.customers) { person in
                 Text("\(person.id), \(person.phone), \(person.email), \(person.password)")
             }
