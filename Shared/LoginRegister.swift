@@ -47,7 +47,7 @@ struct LoginRegister: View {
                     Text("Name")
                         .padding()
                         .frame(width:140, alignment: .leading)
-                    TextField("name", text: $name[loginOrRegister])
+                    TextField("name", text: $name[1])
                         .padding()
                 }
             }
@@ -64,7 +64,7 @@ struct LoginRegister: View {
                 Text("Password")
                     .padding()
                     .frame(width:140, alignment: .leading)
-                SecureField("password", text: $password[loginOrRegister])
+                TextField("password", text: $password[loginOrRegister])
                     .padding()
                     .disableAutocorrection(true)
                     .autocapitalization(UITextAutocapitalizationType.none)
@@ -74,7 +74,7 @@ struct LoginRegister: View {
                     Text("Phone")
                         .padding()
                         .frame(width:140, alignment: .leading)
-                    TextField("Phone", text: $phone[loginOrRegister])
+                    TextField("Phone", text: $phone[1])
                         .padding()
                 }
             }
@@ -103,7 +103,7 @@ struct LoginRegister: View {
                 //.frame(width: 300) this doesn't seem to do anything thanks swiftUI.
                 .padding()
             } else if(loginOrRegister==1) {
-                Button { registerCustomer(email[1],password[1],phone[1]) } label: {
+                Button { registerCustomer(phone[1],email[1],password[1]) } label: {
                     Text("Register")
                         .padding()
                         .foregroundColor(Color.white)
@@ -151,9 +151,9 @@ struct LoginRegister: View {
         }
     }
     
-    private func registerCustomer(_ email: String, _ password: String, _ phone: String) {
+    private func registerCustomer(_ phone: String, _ email: String, _ password: String) {
         insertThisCustomer.getCustomers(phone,email,password)
-        registerSuccess = true
+        registerSuccess = true // band-aid on a burn
     }
 }
 

@@ -19,7 +19,7 @@ class InsertCustomerService: ObservableObject {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "Post"
-        let postString = "phone=\(phone) & password = \(password) & email=\(email)"
+        let postString = "phone=\(phone) & email=\(email) & password=\(password)"
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         
         URLSession.shared
